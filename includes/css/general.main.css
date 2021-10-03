@@ -1,0 +1,150 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1 de out de 2021, 16:51:50
+    Author     : Axel
+*/
+
+body{
+
+}
+
+.center{
+    display: grid;
+    justify-content: center;
+}
+
+.footer{
+    height: 120px;
+    width: 100vw;
+    margin-top: 15px;
+    background: black;
+    bottom: 0;
+}
+
+.dat{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../img/back.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-left: -8px;
+    margin-top: -8px;
+    z-index: -1;
+}
+
+.me{
+    height: 119px;
+    width: 119px;
+    background: url('../img/profile.png')no-repeat;
+    background-size: 100%;
+    border: 1px solid #ff000073;
+    transition: 0.8s;
+}
+.me:hover{
+    transform: scale(1.2) rotate(360deg);
+    background: url('../img/profile.png')no-repeat, #1c1c1c;
+    background-size: 100%;
+    transition: 0.5s;
+}
+
+nav{
+    height: 100vh;
+    width: 120px;
+    background: #1c1c1c;
+    position: absolute;
+    margin-top: -8px;
+    margin-left: -8px;
+    box-shadow: 3px 0px 15px 5px rgba(0,0,0,0.37);
+    z-index: 1;
+    text-align: center;
+}
+
+nav ul{
+    display: grid;
+    justify-content: center;
+    list-style-type: none;
+
+}
+nav ul a{
+    text-decoration: none;
+}
+nav ul li{
+    border-bottom: 1px solid #ff000073;
+    /*background: #5c5c5c;*/
+    height: 75px;
+    width: 118px;
+    margin-left: -38px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    /* margin-top: 15px;*/
+    transition: 0.8s;
+
+
+    /* font */
+    font-family: monospace;
+    font-size: 16px;
+    color: red; 
+
+}
+nav ul li:hover{
+    background: #c1c1c1;
+    transform: translateX(10px);
+    transition: 0.5s;
+    color: black;
+}
+
+nav .ulFinal{
+    position: absolute;
+    bottom: 0;
+}
+
+.content{
+    height: 100vh;
+    width: 100vw;
+    background: #0000009c;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Separador */
+hr{
+    border: 1px solid #5c5c5c;
+}
+
+.page{
+    height: 750px;
+    width: 750px;
+}
+.page p{
+    color: white;
+    font-family: monospace;
+    font-size: 75px;
+    text-align: center;
+}
+#sauda{
+    font-size: 85px;
+    font-weight: 600;
+}
+#portfolio{
+    color: #ff4242;
+}
+
+.about{
+    height: 750px;
+    width: 800px;
+    background: white;
+    margin-top: -65px;
+    border-radius: 11px;
+}
