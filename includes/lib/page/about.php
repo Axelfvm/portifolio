@@ -5,6 +5,8 @@
  * and open the template in the editor.
  */
 ?>
-<div class="about">
-    <p>teste</p>
+<div class="page">
+    <div class="about">
+        <p>teste</p>
+    </div>
 </div>

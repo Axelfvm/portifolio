@@ -5,12 +5,14 @@
  * and open the template in the editor.
  */
 ?>
+<div class="page">
+    <p>
+        <a id="sauda" style="color: yellow;"></a>
+        <br>
+        <br>
+        Bem vindo ao meu 
+        <a id="portfolio">portfólio</a> 
+        virtual.
+    </p>
+</div>
 
-<p>
-    <a id="sauda" style="color: yellow"></a>
-    <br>
-    <br>
-    Bem vindo ao meu 
-    <a id="portfolio">portfólio</a> 
-    virtual.
-</p>

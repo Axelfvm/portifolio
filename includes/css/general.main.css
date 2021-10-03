@@ -147,4 +147,54 @@ hr{
     background: white;
     margin-top: -65px;
     border-radius: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.about #login{
+    text-align: center;
+    height: 27px;
+    width: 180px;
+    border-radius: 12px;
+    border: 1px solid grey;
+}
+.about #login:focus{
+    outline: 0;
+    box-shadow: 0;
+}
+
+.about #pass{
+    text-align: center;
+    height: 27px;
+    width: 180px;
+    border-radius: 12px;
+    border: 1px solid grey;
+}
+.about #pass:focus{
+    outline: 0;
+    box-shadow: 0;
+}
+
+.about form{
+    text-align: center;
+    border: 1px solid black;
+    padding: 50px;
+    border-radius: 10px;
+}
+.btn{
+    height: 40px;
+    width: 120px;
+    border-radius: 8px;
+    border: none;
+    transition: 0.5s;
+    color: #c1c1c1;
+    font-family: monospace;
+}
+.btn:hover{
+    background: #aeaeae;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
 }
