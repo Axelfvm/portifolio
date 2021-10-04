@@ -9,7 +9,8 @@ include('./includes/lib/class/verifi_page.php');
         <title><?= $title ?></title>
         <link href="includes/css/general.main.css" rel="stylesheet" type="text/css"/>
         <link href="includes/css/particle.main.css" rel="stylesheet" type="text/css"/>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
     <body>
 
@@ -21,23 +22,25 @@ include('./includes/lib/class/verifi_page.php');
                 <div class="content">
 
 
-                    
-                        <?php
-                        if (isset($_GET['page'])) {
-                            $pagCon = $_GET['page'];
-                            $loadPage = '';
-                            if ($pagCon == 'about') {
-                                $loadPage = include ('./includes/lib/page/about.php');
-                            } else if ($pagCon == 'login') {
-                                $loadPage = include ('./includes/lib/page/login.php');
-                            } else {
-                                $loadPage = include ('./includes/lib/page/home.php');
-                            }
+
+                    <?php
+                    if (isset($_GET['page'])) {
+                        $pagCon = $_GET['page'];
+                        $loadPage = '';
+                        if ($pagCon == 'about') {
+                            $loadPage = include ('./includes/lib/page/about.php');
+                        } else if ($pagCon == 'login') {
+                            $loadPage = include ('./includes/lib/page/login.php');
+                        } else if ($pagCon == 'profile') {
+                            $loadPage = include ('./includes/lib/page/profile.php');
                         } else {
                             $loadPage = include ('./includes/lib/page/home.php');
                         }
-                        ?>
-                 
+                    } else {
+                        $loadPage = include ('./includes/lib/page/home.php');
+                    }
+                    ?>
+
                 </div>
             </div>
 

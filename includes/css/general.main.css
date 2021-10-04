@@ -8,9 +8,6 @@ and open the template in the editor.
     Author     : Axel
 */
 
-body{
-
-}
 
 .center{
     display: grid;
@@ -28,6 +25,7 @@ body{
 .dat{
     height: 100vh;
     width: 100vw;
+    background: black;
     background-image: url('../img/back.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -55,7 +53,7 @@ body{
 }
 
 nav{
-    height: 100vh;
+    height: 100%;
     width: 120px;
     background: #1c1c1c;
     position: absolute;
@@ -197,4 +195,625 @@ hr{
     cursor: pointer;
     transition: 0.5s;
     color: black;
+}
+
+
+.desktop-nav{
+    display: block;
+}
+
+.mobile-nav{
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .center{
+        display: grid;
+        justify-content: center;
+    }
+
+    .footer{
+        height: 120px;
+        width: 100vw;
+        margin-top: 15px;
+        background: black;
+        bottom: 0;
+    }
+
+    .dat{
+        height: 100vh;
+        width: 100vw;
+        background: black;
+        background-image: url('../img/back.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        margin-left: -8px;
+        margin-top: -8px;
+        z-index: -1;
+    }
+
+    .me{
+        height: 78px;
+        width: 78px;
+        background: url('../img/profile.png')no-repeat;
+        background-size: 100%;
+        border: 1px solid #ff000073;
+        transition: 0.8s;
+    }
+    .me:hover{
+        transform: scale(1.2) rotate(360deg);
+        background: url('../img/profile.png')no-repeat, #1c1c1c;
+        background-size: 100%;
+        transition: 0.5s;
+    }
+
+
+
+    .desktop-nav{
+        display: none;
+    }
+
+    .mobile-nav{
+        display: block;
+        height: 50px;
+        width: 62px;
+        border-radius: 10px;
+        margin: 5px 5px 5px 5px;
+    }
+
+
+
+
+    #menuToggle
+    {
+        display: block;
+        position: relative;
+        top: 15px;
+        left: 15px;
+
+        z-index: 1;
+
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    #menuToggle a
+    {
+        text-decoration: none;
+        color: #232323;
+
+        transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover
+    {
+        color: tomato;
+    }
+
+
+    #menuToggle input
+    {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+
+        cursor: pointer;
+
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+
+    /*
+     * Just a quick hamburger
+     */
+    #menuToggle span
+    {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+
+        background: #cdcdcd;
+        border-radius: 3px;
+
+        z-index: 1;
+
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child
+    {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2)
+    {
+        transform-origin: 0% 100%;
+    }
+
+    /* 
+     * Transform all the slices of hamburger
+     * into a crossmark.
+     */
+    #menuToggle input:checked ~ span
+    {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
+
+    /*
+     * But let's hide the middle one.
+     */
+    #menuToggle input:checked ~ span:nth-last-child(3)
+    {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    /*
+     * Ohyeah and the last one should go the other direction
+     */
+    #menuToggle input:checked ~ span:nth-last-child(2)
+    {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    /*
+     * Make this absolute positioned
+     * at the top left of the screen
+     */
+    #menu
+    {
+        position: absolute;
+        width: 160px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        border-radius: 10px;
+        background: #1c1c1c;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    #menu li
+    {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+    /*
+     * And let's slide it in from the left
+     */
+    #menuToggle input:checked ~ ul
+    {
+        transform: none;
+    }
+
+
+
+
+
+
+    .content{
+        height: 100vh;
+        width: 100vw;
+        background: #0000009c;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* Separador */
+    hr{
+        border: 1px solid #5c5c5c;
+    }
+
+    .page{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .page .txt{
+        color: white;
+        font-family: monospace;
+        font-size: 40px;
+        text-align: center;
+    }
+    #sauda{
+        font-size: 1.7em;
+        font-weight: 600;
+    }
+    #portfolio{
+        color: #ff4242;
+    }
+
+    .about{
+        height: 80%;
+        width: 75%;
+        background: white;
+        margin-top: 10px;
+        border-radius: 11px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        padding: 30px;   
+    }
+
+    .about #login{
+        text-align: center;
+        height: 27px;
+        width: 180px;
+        border-radius: 12px;
+        border: 1px solid grey;
+    }
+    .about #login:focus{
+        outline: 0;
+        box-shadow: 0;
+    }
+
+    .about #pass{
+        text-align: center;
+        height: 27px;
+        width: 180px;
+        border-radius: 12px;
+        border: 1px solid grey;
+    }
+    .about #pass:focus{
+        outline: 0;
+        box-shadow: 0;
+    }
+
+    .about form{
+        text-align: center;
+        border: 1px solid black;
+        padding: 50px;
+        border-radius: 10px;
+    }
+    .btn{
+        height: 40px;
+        width: 120px;
+        border-radius: 8px;
+        border: none;
+        transition: 0.5s;
+        color: #c1c1c1;
+        font-family: monospace;
+    }
+    .btn:hover{
+        background: #aeaeae;
+        cursor: pointer;
+        transition: 0.5s;
+        color: black;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .center{
+        display: grid;
+        justify-content: center;
+    }
+
+    .footer{
+        height: 120px;
+        width: 100vw;
+        margin-top: 15px;
+        background: black;
+        bottom: 0;
+    }
+
+    .dat{
+        height: 100vh;
+        width: 100vw;
+        background: black;
+        background-image: url('../img/back.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        margin-left: -8px;
+        margin-top: -8px;
+        z-index: -1;
+    }
+
+    .me{
+        height: 78px;
+        width: 78px;
+        background: url('../img/profile.png')no-repeat;
+        background-size: 100%;
+        border: 1px solid #ff000073;
+        transition: 0.8s;
+    }
+    .me:hover{
+        transform: scale(1.2) rotate(360deg);
+        background: url('../img/profile.png')no-repeat, #1c1c1c;
+        background-size: 100%;
+        transition: 0.5s;
+    }
+
+
+
+    .desktop-nav{
+        display: none;
+    }
+
+    .mobile-nav{
+        display: block;
+        height: 50px;
+        width: 62px;
+        border-radius: 10px;
+        margin: 5px 5px 5px 5px;
+    }
+
+
+
+
+    #menuToggle
+    {
+        display: block;
+        position: relative;
+        top: 15px;
+        left: 15px;
+
+        z-index: 1;
+
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    #menuToggle a
+    {
+        text-decoration: none;
+        color: #232323;
+
+        transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover
+    {
+        color: tomato;
+    }
+
+
+    #menuToggle input
+    {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+
+        cursor: pointer;
+
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+
+    /*
+     * Just a quick hamburger
+     */
+    #menuToggle span
+    {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+
+        background: #cdcdcd;
+        border-radius: 3px;
+
+        z-index: 1;
+
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child
+    {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2)
+    {
+        transform-origin: 0% 100%;
+    }
+
+    /* 
+     * Transform all the slices of hamburger
+     * into a crossmark.
+     */
+    #menuToggle input:checked ~ span
+    {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
+
+    /*
+     * But let's hide the middle one.
+     */
+    #menuToggle input:checked ~ span:nth-last-child(3)
+    {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    /*
+     * Ohyeah and the last one should go the other direction
+     */
+    #menuToggle input:checked ~ span:nth-last-child(2)
+    {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    /*
+     * Make this absolute positioned
+     * at the top left of the screen
+     */
+    #menu
+    {
+        position: absolute;
+        width: 160px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        border-radius: 10px;
+        background: #1c1c1c;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    #menu li
+    {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+    /*
+     * And let's slide it in from the left
+     */
+    #menuToggle input:checked ~ ul
+    {
+        transform: none;
+    }
+
+
+
+
+
+
+    .content{
+        height: 100vh;
+        width: 100vw;
+        background: #0000009c;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* Separador */
+    hr{
+        border: 1px solid #5c5c5c;
+    }
+
+    .page{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .page .txt{
+        color: white;
+        font-family: monospace;
+        font-size: 40px;
+        text-align: center;
+    }
+    #sauda{
+        font-size: 1.7em;
+        font-weight: 600;
+    }
+    #portfolio{
+        color: #ff4242;
+    }
+
+    .about{
+        height: 80%;
+        width: 75%;
+        background: white;
+        margin-top: 10px;
+        border-radius: 11px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        padding: 30px;   
+    }
+
+    .about #login{
+        text-align: center;
+        height: 27px;
+        width: 180px;
+        border-radius: 12px;
+        border: 1px solid grey;
+    }
+    .about #login:focus{
+        outline: 0;
+        box-shadow: 0;
+    }
+
+    .about #pass{
+        text-align: center;
+        height: 27px;
+        width: 180px;
+        border-radius: 12px;
+        border: 1px solid grey;
+    }
+    .about #pass:focus{
+        outline: 0;
+        box-shadow: 0;
+    }
+
+    .about form{
+        text-align: center;
+        border: 1px solid black;
+        padding: 50px;
+        border-radius: 10px;
+    }
+    .btn{
+        height: 40px;
+        width: 120px;
+        border-radius: 8px;
+        border: none;
+        transition: 0.5s;
+        color: #c1c1c1;
+        font-family: monospace;
+    }
+    .btn:hover{
+        background: #aeaeae;
+        cursor: pointer;
+        transition: 0.5s;
+        color: black;
+    }
 }

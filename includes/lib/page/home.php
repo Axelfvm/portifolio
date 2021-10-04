@@ -6,7 +6,9 @@
  */
 ?>
 <div class="page">
-    <p>
+    <p class="txt">
+        <br>
+        <br>
         <a id="sauda" style="color: yellow;"></a>
         <br>
         <br>
